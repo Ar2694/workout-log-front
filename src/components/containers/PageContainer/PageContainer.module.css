@@ -1,0 +1,15 @@
+.root :global .page-content {
+    margin-right: 68px;
+
+}
+
+.root :global .page-paper{
+height:100%;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 1050px) {
+    .root :global .page-content {
+        margin: 50px 0px;
+    }
+}

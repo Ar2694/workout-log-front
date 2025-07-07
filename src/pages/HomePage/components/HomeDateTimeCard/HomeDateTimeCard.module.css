@@ -1,0 +1,22 @@
+.root {
+
+    /* background-color: #EDEFF1; */
+}
+
+
+
+.root :global .home-nav-card-button:hover .icon {
+
+    /* color: #EDEFF1; */
+}
+
+
+.root :global .home-nav-card-button:hover .text {
+
+    /* color: #EDEFF1; */
+}
+
+.root :global .home-nav-card-button .icon {
+    color: #0d47a1;
+    font-size: 60px;
+}

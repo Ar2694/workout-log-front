@@ -1,0 +1,28 @@
+.root {
+    padding: 20px;
+    position: relative;
+    padding-left: 50px;
+}
+
+.root :global .excerise-detail-text {
+    text-transform: capitalize
+}
+
+.root :global .excerise-detail-text.reps-text {
+    text-transform: initial
+}
+
+.root::before {
+    content: "";
+    border-width: 5px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+
+.root :global .MuiCardHeader-title{
+    white-space: normal;
+}

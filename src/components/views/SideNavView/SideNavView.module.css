@@ -1,0 +1,81 @@
+.root {
+
+background-color: transparent;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.root:global(.MuiCollapse-entered) {}
+
+.root:global(.MuiCollapse-hidden) {}
+
+.root :global .MuiListItemButton-root.active,
+.root :global .MuiListItemButton-root:hover {
+  color: #e7e9eb
+}
+
+.root :global .side-nav-view-content {
+  
+  position: fixed;
+  width: inherit;
+  min-width: inherit;
+}
+
+.root :global .MuiList-root {
+  cursor: pointer;
+}
+
+.root :global .MuiListItemButton-root:hover,
+.root :global .MuiListItem-root:hover a {
+  background-color: transparent;
+
+}
+
+.root :global .MuiListItem-root:hover .MuiListItemIcon-root,
+.root :global .MuiListItem-root:hover .MuiListItemText-root,
+.root :global .MuiListItem-root .active .MuiListItemIcon-root,
+.root :global .MuiListItem-root .active .MuiListItemText-root {
+  color: #05a7f8
+}
+
+.root :global .MuiListItemIcon-root {
+  min-width: 20px;
+  padding: 0 10px;
+
+  color: #0d47a1
+}
+
+.root :global .MuiListItemText-root {
+  margin-left: 20px;
+  color: #0d47a1;
+}
+
+.root :global .MuiListItemButton-root {
+  width: inherit;
+}
+
+.root :global .menu-icon-button {
+  padding: 0;
+  color: #0d47a1;
+}
+
+.root :global .MuiToolbar-root {
+  padding: 0 25px;
+}
+
+
+.root :global .mobile-nav{
+  background-color: #EDEFF1;
+    transition: height 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+
+@media only screen and (max-width: 1050px) {
+  .root {
+
+    position: fixed;
+      width: 100%;
+    z-index: 99;
+      transition: none;
+  }
+
+}

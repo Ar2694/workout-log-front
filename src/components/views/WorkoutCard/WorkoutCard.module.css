@@ -1,0 +1,22 @@
+.root {
+    height: max-content;
+    white-space: nowrap;
+}
+
+.root :global .workout-card {
+    padding: 15px;
+    border-radius: 5px
+}
+
+.root :global .card-button:hover .MuiCardActionArea-focusHighlight {
+    opacity:0.3;
+}
+
+.root :global .calendar-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.root :global .MuiCardHeader-title{
+    white-space: normal;
+}

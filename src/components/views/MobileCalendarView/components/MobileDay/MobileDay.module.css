@@ -1,0 +1,86 @@
+
+
+
+ 
+
+
+.root {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    align-items: flex-start;
+    opacity: 1;
+    cursor: initial;
+    padding: 10px;
+    
+    border-left: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.root :global .data-container {
+    padding: 10px;
+        padding: "10px";
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+
+    background: red 
+}
+
+.root :global .chip-container {
+   
+    overflow-y: scroll;
+    padding:15px;
+    min-height: 0;
+}
+
+.root:global(:focus),
+.root:global(:hover) {
+    background-color: initial;
+}
+
+.root:global(.MuiPickersDay-today),
+.root:global(.MuiPickersDay-today.outside-month:not(.Mui-selected)) {
+    box-shadow: inset 0px 0px 3px 3px rgba(13, 70, 161, 1);
+    border: none;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-radius: 0px;
+    font-weight: bold;
+}
+
+ .root:global(.outside-month:not(.Mui-selected)){
+    /* background-color: theme.palette.grey[100], */
+    /* color: theme.palette.grey[500], */
+    opacity: 1
+  }
+
+.root:global(.MuiPickersDay-today){
+   border: none;
+    
+}
+
+.root:global(.outside-month) {
+   display: none;
+}
+
+.root:global(.MuiPickersDay-dayOutsideMonth) {
+   display: none;
+    
+}
+
+.root:global(.outside-month:not(.Mui-selected)) {
+    opacity: 1
+    
+}
+
+.root :global .add-box-icon {
+  /* fill: theme.palette.primary.dark, */
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.root:global(.sunday) {
+    border-left: none;
+}

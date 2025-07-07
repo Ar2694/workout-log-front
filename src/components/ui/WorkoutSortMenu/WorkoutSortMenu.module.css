@@ -1,0 +1,21 @@
+.root {
+    background-color: transparent;
+}
+
+.root :global .MuiOutlinedInput-notchedOutline {
+    border: none;
+}
+
+.root :global .MuiSelect-iconOutlined {
+    color: var(--mui-palette-primary-main);
+}
+
+.root :global .MuiInputBase-input.MuiSelect-select {
+    color: var(--mui-palette-primary-main);
+}
+
+@media screen and (max-width: 1050px) {
+    .root :global .MuiInputBase-input.MuiSelect-select {
+        padding: 0 0 0 14px
+    }
+}

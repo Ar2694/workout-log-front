@@ -1,0 +1,12 @@
+.root :global .excerise-detail-text {
+    text-transform: capitalize;
+}
+
+.root :global .list-icon {
+    min-width: 20px;
+    color: #000000;
+}
+
+.root :global .list-icon svg {
+    width: 10px;
+}

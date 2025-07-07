@@ -1,0 +1,7 @@
+.root {
+    background-color: #FFFFFF
+}
+
+.root :global .MuiInputBase-input {
+    padding-left: 5px;
+}

@@ -1,0 +1,39 @@
+.root {
+    background-color: #EDEFF1;
+    min-height: 48px;
+    border-radius: 0px;
+    min-height: 38px;
+}
+
+.root :global .icon-button {
+    padding: 6px 22px;
+}
+
+.root :global .MuiButton-icon {
+    margin-right: 16px;
+    margin-left: -4px;
+
+}
+
+.root :global .MuiButton-icon .MuiSvgIcon-root{
+    width: 24px;
+    height: 24px;
+}
+
+.root :global .MuiToolbar-root {
+    min-height: inherit
+}
+
+.root :global .nav-item {
+    color: #0D47A1;
+    padding: 15px 30px;
+    border-radius: 0px;
+    width: 100%;
+    font-size: 16px;
+    justify-content: flex-start;
+}
+
+.root :global .nav-item:hover,
+.root :global .nav-item.active {
+    color: #05a7f8
+}

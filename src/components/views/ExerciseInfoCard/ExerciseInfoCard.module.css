@@ -1,0 +1,35 @@
+.root {
+    height: max-content;
+}
+
+.root :global .exercise-info-card {
+    padding: 25px;
+    border-radius: 5px;
+}
+
+
+.root :global .list-icon {
+    min-width: 20px;
+}
+
+
+.root :global .list-icon svg {
+    fill: #000000;
+    width: 5px;
+    height: 5px;
+}
+
+.root :global .secondary-muscles-list,
+.root :global .instructions-list {
+    margin: 0;
+}
+
+.root :global .MuiListItem-root {
+    padding: 0 10px;
+    align-items: baseline;
+}
+
+
+.root :global .MuiCardHeader-title{
+    white-space: normal;
+}

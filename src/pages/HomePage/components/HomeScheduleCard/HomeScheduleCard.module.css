@@ -1,0 +1,22 @@
+.root :global .home-nav-card-button .icon {
+    color: #0d47a1;
+    font-size: 60px;
+}
+
+.root :global .scheduled-chip {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    padding: 2px 5px;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.root :global .scheduled-chip .MuiChip-label {
+    margin-right: auto;
+    display: block;
+}
+
+.root :global .scheduled-chip .MuiChip-icon {
+    margin: 0;
+    cursor: pointer;
+}

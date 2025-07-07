@@ -1,0 +1,26 @@
+.root :global .home-nav-card-button {
+    padding: 50px;
+    background-color: #EDEFF1;
+    min-height: 240px;
+}
+
+.root :global .home-nav-card-button:hover {
+    background-color: #0d48a10c;
+
+}
+
+.root :global .home-nav-card-button:hover .icon {
+
+    /* color: #EDEFF1; */
+}
+
+
+.root :global .home-nav-card-button .text {
+
+    color: #0d47a1;
+}
+
+.root :global .home-nav-card-button .icon {
+    color: #0d47a1;
+    font-size: 60px;
+}
