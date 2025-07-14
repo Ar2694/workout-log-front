@@ -7,7 +7,6 @@ import dayjs from "dayjs";
 import PageHandlerView from "components/views/PageHandlerView";
 import usePageHandler from "hooks/usePageHandler";
 import ScheduleAPI from "api/schedule-api";
-import Schedule from "classes/schedule";
 
 interface Props {
     children: React.ReactNode,
