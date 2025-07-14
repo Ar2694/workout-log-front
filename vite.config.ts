@@ -23,8 +23,7 @@ export default defineConfig(({ mode }) => {
       proxy: {
         "/api": {
           target: "https://main.workout-log-back-aws.com",
-          changeOrigin: false,
-          secure: false
+
         }
       },
 
