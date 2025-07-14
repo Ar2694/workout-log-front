@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
       }
     },
     server: {
-      cors: false,
+      cors: true,
       proxy: {
         "/api": {
           target: "https://main.workout-log-back-aws.com",
