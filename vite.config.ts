@@ -21,7 +21,7 @@ export default defineConfig(({mode}) =>  {
   server: {
     proxy: {
       "/api": {
-        target: isDev ? "http://localhost:3001": "https://main.d2xaef8h7k95lm.amplifyapp.com",
+        target: isDev ? "http://localhost:3001": "https://main.workout-log-back-aws.com",
         changeOrigin: isDev,
         secure: !isDev
       }
