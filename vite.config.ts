@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
         "/api": {
           target: isDev ? "http://localhost:3001" : "https://main.workout-log-back-aws.com",
           changeOrigin: !isDev,
-          secure: !isDev
+          secure: false
         }
       },
 
