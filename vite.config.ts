@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
       proxy: {
         "/api": {
           target: isDev ? env.VITE_API_URL_DEV : env.VITE_API_URL,
-          changeOrigin: !isDev, // Changes the origin header to the target URL
+          changeOrigin: isDev,
           secure: !isDev, // If the target is an HTTPS URL, set this to true ,
         }
       },
