@@ -5,9 +5,9 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, process.cwd(), '')
+  const env = loadEnv(mode, process.cwd(), '')
   const isDev = mode === "development"
-  console.log(mode, env.VITE_API_URL, env.VITE_API_URL_DEV,"<<<<++++======/////")
+  console.log(mode, isDev, env.VITE_API_URL, env.VITE_API_URL_DEV, "<<<<++++======/////")
   return {
     plugins: [react(), tsconfigPaths()],
     css: {
@@ -22,12 +22,12 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         "/api": {
-          target: env.VITE_API_URL,
-          changeOrigin: !isDev,
-          secure: !isDev,
-
+          target: isDev ? env.VITE_API_URL_DEV : env.VITE_API_URL,
+          changeOrigin: !isDev, // Changes the origin header to the target URL
+          secure: !isDev, // If the target is an HTTPS URL, set this to true ,
         }
       },
+
 
     },
   }

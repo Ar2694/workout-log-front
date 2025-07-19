@@ -16,6 +16,7 @@ export default class ScheduleAPI  {
 
     //Get all scheduled workouts
     async GetSchedules(_query?: string) {
+      
         const query = _query ? `?${_query}` : "";
         const data = await APIClient.get(`${this.baseURI}${query}`)
         
