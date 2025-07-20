@@ -6,8 +6,8 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const isDev = mode === "development";
-  console.log(mode, isDev, env.VITE_API_URL, env.VITE_API_URL_DEV, "<<<<++++======/////")
+  const isDev = mode === "development"
+  console.log(mode, isDev, env.VITE_API_URL, env.npm_lifecycle_event, "<<<<++++======/////")
   return {
     plugins: [react(), tsconfigPaths()],
     css: {
@@ -23,8 +23,6 @@ export default defineConfig(({ mode }) => {
       proxy: {
         "/api": {
           target: env.VITE_API_URL_DEV,
-          changeOrigin: true,
-          secure: false,
         }
       }
     },
@@ -33,7 +31,7 @@ export default defineConfig(({ mode }) => {
         "/api": {
           target: env.VITE_API_URL,
           changeOrigin: true,
-          secure: true
+  
         }
       }
     },

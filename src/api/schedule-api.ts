@@ -1,12 +1,11 @@
 
 import APIClient from "api/utils/api-client";
 
-export default class ScheduleAPI {
+export default class ScheduleAPI  {
     private baseURI: string;
 
     constructor(baseURI: string) {
-        this.baseURI = import.meta.env.MODE === 'development' ? baseURI : `${import.meta.env.VITE_API_URL}${baseURI}`;
-        console.log("Base URI for ScheduleAPI:", this.baseURI);
+        this.baseURI = baseURI;
     }
 
     // Static methods
@@ -16,16 +15,16 @@ export default class ScheduleAPI {
 
     //Get all scheduled workouts
     async GetSchedules(_query?: string) {
-
+      
         const query = _query ? `?${_query}` : "";
         const data = await APIClient.get(`${this.baseURI}${query}`)
-
+        
         return data;
     }
     //Get all scheduled workouts
-    DeleteAllSchedules = () => {
-        const data = APIClient.post(`${this.baseURI}/deleteAll`)
-
+     DeleteAllSchedules =  () => {
+        const data =  APIClient.post(`${this.baseURI}/deleteAll`)
+        
         return data;
     }
     // Create Schedule
@@ -36,7 +35,7 @@ export default class ScheduleAPI {
 
     async GetScheduleById(id: any) {
         const data = await APIClient.get(`${this.baseURI}/edit/${id}`);
-
+        
         return data;
     }
 

@@ -5,8 +5,7 @@ export default class WorkoutAPI  {
     private baseURI: string;
 
     constructor(baseURI: string) {
-     this.baseURI = import.meta.env.MODE === 'development' ? baseURI : `${import.meta.env.VITE_API_URL}${baseURI}`;
-        console.log("Base URI for ScheduleAPI:", this.baseURI);
+        this.baseURI = baseURI;
     }
 
     // Static methods

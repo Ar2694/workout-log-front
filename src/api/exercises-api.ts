@@ -5,8 +5,7 @@ export default class ExercisesAPI {
   private baseURI: string;
 
   constructor(baseURI: string) {
-    this.baseURI = baseURI;
-    console.log("Base URI for ExercisesAPI:", this.baseURI);
+        this.baseURI = baseURI;
   }
 
   async GetExercises(_query?: string): Promise<ExercisesAPI> {
