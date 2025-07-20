@@ -27,15 +27,10 @@ export default defineConfig(({ mode }) => {
           secure: !isDev, // If the target is an HTTPS URL, set this to true ,
         }
       },
-      preview: {
-        proxy: {
-          "/api": {
-            target: isDev ? env.VITE_API_URL_DEV : env.VITE_API_URL,
-            changeOrigin: isDev,
-            secure: !isDev,
-          }
-        }
-      }
+      cors: {
+        // the origin you will be accessing via browser
+        origin: isDev ? env.VITE_API_URL_DEV : env.VITE_API_URL,
+      },
     }
   }
 })
