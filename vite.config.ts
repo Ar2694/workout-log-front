@@ -20,9 +20,7 @@ const defaultConfig = {
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const isDev = mode === "development"
-  console.log(mode, isDev,env, command, "<<<<++++======/////")
-
+  const isDev = mode === "development";
 
   if (command === "serve") {
     return {
