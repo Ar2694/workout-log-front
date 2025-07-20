@@ -5,7 +5,7 @@ export default class ExercisesAPI {
   private baseURI: string;
 
   constructor(baseURI: string) {
-        this.baseURI = baseURI;
+        this.baseURI = import.meta.env.MODE === 'development' ? baseURI : `${import.meta.env.VITE_API_URL}${baseURI}`;
   }
 
   async GetExercises(_query?: string): Promise<ExercisesAPI> {

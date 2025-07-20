@@ -21,7 +21,7 @@ const defaultConfig = {
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const isDev = mode === "development"
-  console.log(mode, isDev, command, "<<<<++++======/////")
+  console.log(mode, isDev,env, command, "<<<<++++======/////")
 
 
   if (command === "serve") {
