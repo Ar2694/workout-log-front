@@ -3,37 +3,50 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths';
 import path from "path";
 
+
+const defaultConfig = {
+  plugins: [react(), tsconfigPaths()],
+  css: {
+    modules: {
+      generateScopedName: function (name: any, filename: any) {
+        const basename = path.basename(filename, ".css")
+        const [component] = basename.split(".");
+        return component + "-" + name;
+      },
+    }
+  }
+}
+
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const isDev = mode === "development"
-  console.log(mode, isDev, env.VITE_API_URL, env.npm_lifecycle_event, "<<<<++++======/////")
-  return {
-    plugins: [react(), tsconfigPaths()],
-    css: {
-      modules: {
-        generateScopedName: function (name, filename) {
-          const basename = path.basename(filename, ".css")
-          const [component] = basename.split(".");
-          return component + "-" + name;
-        },
-      }
-    },
-    server: {
-      proxy: {
-        "/api": {
-          target: env.VITE_API_URL_DEV,
+  console.log(mode, isDev, command, "<<<<++++======/////")
+
+
+  if (command === "serve") {
+    return {
+      ...defaultConfig,
+      server: {
+        proxy: {
+          "/api": {
+            target:env.VITE_API_URL_DEV,
+            changeOrigin: false,
+            secure: false,
+          }
         }
-      }
-    },
-    preview: {
-      proxy: {
-        "/api": {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
+      },
+      preview: {
+        proxy: {
+          "/api": {
+            target: env.VITE_API_URL,
+            changeOrigin: true,
+            secure: true
+    }}}
   
-        }
-      }
-    },
   }
+  } else {
+    return defaultConfig;
+  }
+
 })
