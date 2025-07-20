@@ -6,7 +6,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const isDev = mode === "development"
+  const isDev = mode === "development";
   console.log(mode, isDev, env.VITE_API_URL, env.VITE_API_URL_DEV, "<<<<++++======/////")
   return {
     plugins: [react(), tsconfigPaths()],
@@ -22,15 +22,20 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         "/api": {
-          target: isDev ? env.VITE_API_URL_DEV : env.VITE_API_URL,
-          changeOrigin: isDev,
-          secure: !isDev, // If the target is an HTTPS URL, set this to true ,
+          target: env.VITE_API_URL_DEV,
+          changeOrigin: true,
+          secure: false,
         }
-      },
-      cors: {
-        // the origin you will be accessing via browser
-        origin: isDev ? env.VITE_API_URL_DEV : env.VITE_API_URL,
-      },
-    }
+      }
+    },
+    preview: {
+      proxy: {
+        "/api": {
+          target: env.VITE_API_URL,
+          changeOrigin: true,
+          secure: true
+        }
+      }
+    },
   }
 })
