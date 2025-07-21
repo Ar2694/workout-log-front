@@ -11,7 +11,12 @@ export default function SaveWorkoutDialog(props: any) {
 }
 
 function SaveWorkoutDialogContent(props: any) {
-    const { open, onCloseModal, pageHandler, form } = props;
+    const { open, onClose, onCloseModal, pageHandler, form } = props;
+
+    const handleSave = () => {
+        pageHandler.handler("onSave", form)();
+        onClose();
+    };
 
     return (
         <Dialog closeAfterTransition={false} className="save-workout-dialog" open={open} maxWidth="desktop" fullWidth >
@@ -21,7 +26,7 @@ function SaveWorkoutDialogContent(props: any) {
                 </Stack>
                 <Stack direction="row" spacing={2} justifyContent="flex-end">
                     <Button color="secondary" variant="outlined" text="Cancel" onClick={onCloseModal} />
-                    <Button color="primary" variant="contained" text="Save" onClick={pageHandler.handler("onSave", form)} />
+                    <Button color="primary" variant="contained" text="Save" onClick={handleSave} />
                 </Stack>
             </Stack>
         </Dialog>

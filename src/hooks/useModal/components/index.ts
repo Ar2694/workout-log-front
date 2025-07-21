@@ -17,5 +17,5 @@ export default {
     "UpdateScheduleDialog": UpdateScheduleDialog,
     "DeleteScheduleDialog": DeleteScheduleDialog,
     "SaveWorkoutDialog": SaveWorkoutDialog,
-    "EditWorkoutDialog": EditWorkoutDialog
+    "EditWorkoutDialog": EditWorkoutDialog,
 }

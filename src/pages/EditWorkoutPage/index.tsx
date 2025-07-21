@@ -37,7 +37,7 @@ function EditWorkoutContent(props: any) {
                 <ResponsiveButtonContainer>
                     <Button variant="outlined" text="Cancel" onClick={pageHandler.handler("onCancel")} />
                     <Button variant="contained" color="error" text="Delete" onClick={onOpenModal("DeleteWorkoutDialog", { pageHandler, workout })} />
-                    <Button variant="contained" text="Save" onClick={onOpenModal("SaveWorkoutDialog",{pageHandler, form})} />
+                    <Button variant="contained" text="Saved" onClick={onOpenModal("EditWorkoutDialog",{pageHandler, form})} />
                 </ResponsiveButtonContainer>
             </ResponsiveContainer>
             <WorkoutFormContainer pageHandler={pageHandler} form={form} />

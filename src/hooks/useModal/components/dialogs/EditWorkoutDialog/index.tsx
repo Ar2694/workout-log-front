@@ -11,7 +11,12 @@ export default function EditWorkoutDialog(props: any) {
 }
 
 function EditWorkoutDialogContent(props: any) {
-    const { open, onCloseModal, pageHandler, form } = props;
+    const { open, onClose, onCloseModal,pageHandler, form } = props;
+
+    const handleUpdate = () => {
+        pageHandler.handler("onSave", form)();
+        onClose();
+    };  
 
     return (
         <Dialog closeAfterTransition={false} className="edit-workout-dialog" open={open} maxWidth="desktop" fullWidth >
@@ -21,7 +26,7 @@ function EditWorkoutDialogContent(props: any) {
                 </Stack>
                 <Stack direction="row" spacing={2} justifyContent="flex-end">
                     <Button color="secondary" variant="outlined" text="Cancel" onClick={onCloseModal} />
-                    <Button color="primary" variant="contained" text="Update" onClick={pageHandler.handler("onSave", form)} />
+                    <Button color="primary" variant="contained" text="Update" onClick={handleUpdate} />
                 </Stack>
             </Stack>
         </Dialog>
