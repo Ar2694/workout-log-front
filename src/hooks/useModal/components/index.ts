@@ -5,6 +5,8 @@ import TestDrawerUI from "./dialogs/TestDrawerUI";
 import TestModalUI from "./dialogs/TestModalUI";
 import UpdateScheduleDialog from "./dialogs/UpdateScheduleDialog ";
 import DeleteScheduleDialog from "./dialogs/DeleteScheduleDialog";
+import SaveWorkoutDialog from "./dialogs/SaveWorkoutDialog";
+import EditWorkoutDialog from "./dialogs/EditWorkoutDialog";
 
 export default {
     "TestModalUI": TestModalUI,
@@ -13,5 +15,7 @@ export default {
     "SaveScheduleDialog": SaveScheduleDialog,
     "DeleteAllSchedulesDialog": DeleteAllSchedulesDialog,
     "UpdateScheduleDialog": UpdateScheduleDialog,
-    "DeleteScheduleDialog": DeleteScheduleDialog
+    "DeleteScheduleDialog": DeleteScheduleDialog,
+    "SaveWorkoutDialog": SaveWorkoutDialog,
+    "EditWorkoutDialog": EditWorkoutDialog
 }

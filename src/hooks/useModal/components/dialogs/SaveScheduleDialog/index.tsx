@@ -11,8 +11,8 @@ export default function SaveScheduleDialog(props: any) {
 }
 
 function SaveScheduleDialogContent(props: any) {
-    console.log(props)
     const { open, onClose, onCloseModal, pageHandler, form } = props;
+    
     return (
         <Dialog closeAfterTransition={false} className="delete-message-dialog" open={open} maxWidth="desktop" fullWidth >
             <Stack padding={2} spacing={2}>

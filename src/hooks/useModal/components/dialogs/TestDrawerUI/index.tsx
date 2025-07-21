@@ -13,8 +13,7 @@ export default function TestDrawerUI(props: any) {
 
 
 function TestDrawerUIContent({ modal, ...props }: any) {
-    const { open, openModal, onClose, onCloseModal, onOpenModal } = modal;
-    console.log(modal, "TestDrawerUIContent")
+    const { open, openModal,  onCloseModal } = modal;
 
     const onOpen = (name: any) => () => {
         openModal(name);

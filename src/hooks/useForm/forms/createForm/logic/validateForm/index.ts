@@ -2,7 +2,6 @@ export default function validateForm(fields: any) {
     let error = false;
 
     const checkForm = ({ fields, isError }: { fields: any, isError: boolean }) => {
-        console.log(fields, isError)
         let _fields: any = {};
         if (Array.isArray(fields)) {
             let fieldArray: any = [];

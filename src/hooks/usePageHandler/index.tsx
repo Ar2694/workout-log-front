@@ -51,7 +51,6 @@ const usePageHandler = (api?: any, pageOptions?:any, pageProps?: any) => {
         setPageData(api);
     }, [])
 
-    console.log(state, "usePageHandler")
     if (pageOptions) {
         const pageHandler = PageHandler.init({ ...state, updatePage, refreshPage, onPageChange });
         return pageHandler;

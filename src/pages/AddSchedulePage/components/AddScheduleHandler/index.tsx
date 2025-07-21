@@ -22,9 +22,7 @@ export default function AddScheduleHandler({ children, className }: Props) {
     pageHandler
         .listener("onSave", (async ({ form, onClose }: any) => {
             const { validateFields } = form;
-            const { hasError, fieldValues } = validateFields()
-
-            console.log(hasError, fieldValues, "onSave")
+            const { hasError, fieldValues } = validateFields();
 
             if (!hasError) {
                 const { isOk } = await ScheduleAPI.CreateSchedule({ ...fieldValues, dateCreated: dayjs() })
@@ -38,7 +36,6 @@ export default function AddScheduleHandler({ children, className }: Props) {
             navigate("/schedules");
         }));
 
-    console.log(pageHandler)
 
     return (
         <PageHandlerView className={className} pageHandler={pageHandler}>

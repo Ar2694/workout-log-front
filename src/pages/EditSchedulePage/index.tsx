@@ -28,7 +28,7 @@ function EditSchedulePageContent(props: any) {
     const { workouts, schedule } = data
     const { onOpenModal } = useModal()
     const form = useForm(schedule);
-    const { setField, hasError } = form;
+    const { setField, hasError, fieldValues } = form;
     const { workout } = schedule;
 
     return (
@@ -37,7 +37,7 @@ function EditSchedulePageContent(props: any) {
                 <ContentHeaderView text="Edit Schedule" />
                 <ResponsiveButtonContainer>
                     <Button variant="outlined" text="Cancel" onClick={pageHandler.handler("onCancel")} />
-                    <Button variant="contained" color="error" text="Delete" onClick={onOpenModal("DeleteScheduleDialog", { pageHandler, form })} />
+                    <Button variant="contained" color="error" text="Delete" onClick={onOpenModal("DeleteScheduleDialog",  { pageHandler, scheduleId: fieldValues._id  })}/>
                     <Button variant="contained" text="Update" onClick={onOpenModal("UpdateScheduleDialog", { pageHandler, form })} />
                 </ResponsiveButtonContainer>
             </ResponsiveContainer>

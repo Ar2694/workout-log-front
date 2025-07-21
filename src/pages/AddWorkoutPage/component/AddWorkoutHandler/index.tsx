@@ -35,8 +35,6 @@ export default function AddWorkoutHandler({ children, className }: Props) {
             navigate("/workouts");
         }));
 
-        console.log(pageHandler)
-
     return (
         <PageHandlerView className={className} pageHandler={pageHandler}>
             {children}

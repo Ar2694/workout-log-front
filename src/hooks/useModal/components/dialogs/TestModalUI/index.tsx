@@ -15,7 +15,6 @@ export default function TestModalUI(props: any) {
 function TestModalUIContent({ modal, ...props }: any) {
     const { open, onOpenModal, onClose, onCloseModal } = modal;
 
-    console.log(modal, "TestModalUIContent")
     return (
         <Dialog closeAfterTransition={false} className="delete-message-dialog" open={open} maxWidth="desktop" fullWidth >
             <Stack padding={2} spacing={2}>

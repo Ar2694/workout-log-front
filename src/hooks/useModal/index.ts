@@ -9,7 +9,7 @@ export default function useModal() {
   const onOpenModal = (name: any, props: any) => () => openModal(name, props);
   const closeModal = (id: any) => _closeModal(state, updateModal, id)
   const onCloseModal = (id: any) => () => closeModal(id);
-  console.log(state.modals, "state.modals,")
+
   return {
     modals: state.modals,
     openModal,

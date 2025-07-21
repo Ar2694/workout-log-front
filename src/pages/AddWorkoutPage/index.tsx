@@ -7,6 +7,7 @@ import ShowHideView from "components/views/ShowHideView";
 import AddWorkoutHandler from "./component/AddWorkoutHandler";
 import ResponsiveContainer from "components/containers/ResponsiveContainer";
 import useForm from "hooks/useForm";
+import { useModal } from "providers/ModalProvider";
 
 export default function AddWorkoutPage() {
     return (
@@ -19,6 +20,7 @@ export default function AddWorkoutPage() {
 function AddWorkoutContent(props: any) {
     const { pageHandler } = props;
     const form = useForm();
+    const { onOpenModal } = useModal();
     
     return (
         <>
@@ -26,7 +28,7 @@ function AddWorkoutContent(props: any) {
                 <ContentHeaderView text="Add Workout" />
                 <ResponsiveButtonContainer >
                     <Button variant="outlined" text="Cancel" onClick={pageHandler.handler("onCancel")} />
-                    <Button variant="contained" text="Save" onClick={pageHandler.handler("onSave", form)} />
+                    <Button variant="contained" text="Save" onClick={onOpenModal("SaveWorkoutDialog",{pageHandler, form})} />
                 </ResponsiveButtonContainer>
             </ResponsiveContainer>
             <ShowHideView bool={form.hasError}>

@@ -7,6 +7,7 @@ import ShowHideView from "components/views/ShowHideView";
 import ResponsiveContainer from "components/containers/ResponsiveContainer";
 import useForm from "hooks/useForm";
 import DuplicateWorkoutHandler from "./component/DuplicateWorkoutHandler";
+import { useModal } from "providers/ModalProvider";
 
 export default function DuplicateWorkoutPage() {
     return (
@@ -22,6 +23,7 @@ function DuplicateWorkoutContent(props: any) {
     const { workoutCopy } = pageProps;
     const { workoutName } = workoutCopy;
     const form = useForm({ ...workoutCopy, workoutName: `Duplicate: ${workoutName}` });
+    const { onOpenModal } = useModal();
 
     return (
         <>
@@ -29,7 +31,7 @@ function DuplicateWorkoutContent(props: any) {
                 <ContentHeaderView text={`Duplicate`} />
                 <ResponsiveButtonContainer >
                     <Button variant="outlined" text="Cancel" onClick={pageHandler.handler("onCancel")} />
-                    <Button variant="contained" text="Save" onClick={pageHandler.handler("onSave", form)} />
+                    <Button variant="contained" text="Save"onClick={onOpenModal("SaveWorkoutDialog",{pageHandler, form})} />
                 </ResponsiveButtonContainer>
             </ResponsiveContainer>
             <ShowHideView bool={form.hasError}>

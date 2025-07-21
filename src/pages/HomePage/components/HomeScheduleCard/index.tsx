@@ -8,11 +8,9 @@ export default function HomeScheduleCard(props: any) {
   const { pageHandler } = props;
   const { data } = pageHandler
   const { schedules } = data;
-
   const todaySchedules = schedules.filter((item: any) => dayjs(item.date).format("MDYYY") === dayjs().format("MDYYY"), []);
   const hasSchedules = todaySchedules.length > 0;
   const scheduleItems = todaySchedules.map((item: any) => <HomeScheduledChip key={item._id} label={item.workout.workoutName} color={item.color} onClick={pageHandler.handler("onNavigate", `/schedules/view/${item._id}`)} />, []);
-  console.log(pageHandler, todaySchedules, "HomeScheduleCard")
 
   return (
     <Grid className={`home-schedule-card ${styles.root}`} container direction="column" spacing={1} >

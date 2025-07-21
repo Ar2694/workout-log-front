@@ -20,9 +20,7 @@ export default function EditScheduleHandler({ children, className }: Props) {
     pageHandler
         .listener("onUpdate", (async ({ form, onClose }: any) => {
             const { validateFields } = form;
-            const { hasError, fieldValues } = validateFields()
-
-            console.log(hasError, fieldValues, "onSave")
+            const { hasError, fieldValues } = validateFields();
 
             if (!hasError) {
                 const { isOk } = await ScheduleAPI.UpdateSchedule({ ...fieldValues, dateCreated: dayjs() })
@@ -35,7 +33,7 @@ export default function EditScheduleHandler({ children, className }: Props) {
         .listener("onDelete", (async (id: any) => {
             const { isOk } = await ScheduleAPI.DeleteScheduleById(id)
             if (isOk) {
-                navigate(-1)
+                navigate("/schedules")
             }
         }))
         .listener("onCancel", (() => {

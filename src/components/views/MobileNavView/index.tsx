@@ -24,13 +24,13 @@ export default function MobileNavView() {
         expand: state
     }
 
-        const theme = useTheme();
+    const theme = useTheme();
     const showMenu = useMediaQuery(theme.breakpoints.down("desktop"));
-   console.log(showMenu, 'PageContainer')
+
 
     return (
-<ShowHideView bool={showMenu}>
-    
+        <ShowHideView bool={showMenu}>
+
 
             <AppBar position="fixed" classes={styles} component={Paper} variant="outlined" square>
                 <Toolbar variant="dense">
@@ -58,9 +58,9 @@ export default function MobileNavView() {
                     </Stack>
                 </Collapse>
             </AppBar>
-      
 
-                </ShowHideView>
+
+        </ShowHideView>
     )
 }
 
