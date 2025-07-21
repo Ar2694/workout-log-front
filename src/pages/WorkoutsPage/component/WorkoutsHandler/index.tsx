@@ -12,15 +12,15 @@ interface Props {
 
 export default function WorkoutsHandler({ children, className }: Props) {
     const navigate = useNavigate();
-    const params = createSearchParams([["pageIndex", "1"], ["pageSize", "12"]]);
+    const params = createSearchParams([["pageIndex", "1"], ["pageSize", "0"]]);
     const api = WorkoutAPI.GetWorkouts(params.toString());
 
     const pageOptions = {
         api: WorkoutAPI.GetWorkouts,
         name: "workouts",
         searchBy: "workoutName",
-        label: "workoutName",
-        order: "asc"
+        label: "dateCreated",
+        order: "desc"
     }
     const pageHandler = usePageHandler(api, pageOptions);
 

@@ -49,21 +49,21 @@ function WorkoutsContent({ pageHandler }: any) {
           } />
 
         <ShowHideView bool={workoutItems.length > 0}>
-          <Grid container spacing={3} display={{ desktop: "none", mobile: "flex" }}>
+          {/* <Grid container spacing={3} display={{ desktop: "none", mobile: "flex" }}>
             <PaginationBase
               page={page}
               onChange={onPageChange}
             />
-          </Grid>
+          </Grid> */}
           <Grid container spacing={3} direction="row" flexWrap="wrap">
             {workoutItems.map((item: any, key: any) => <WorkoutCard key={key} {...item} pageHandler={pageHandler} />, [])}
           </Grid >
-          <Grid container spacing={3} >
+          {/* <Grid container spacing={3} >
             <PaginationBase
               page={page}
               onChange={onPageChange}
             />
-          </Grid>
+          </Grid> */}
         </ShowHideView>
 
         <ShowHideView bool={workoutItems !== undefined && workoutItems.length === 0}>

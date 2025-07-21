@@ -1,10 +1,16 @@
+.root:global(:hover) {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
 .root {
-    height: max-content;
+    padding: 20px;
 }
 
 .root :global .exercise-info-card {
     padding: 25px;
     border-radius: 5px;
+    height: 100%;
 }
 
 

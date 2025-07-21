@@ -1,11 +1,15 @@
 .root {
-    height: max-content;
     white-space: nowrap;
 }
 
 .root :global .workout-card {
+     min-height: 100px;
     padding: 15px;
-    border-radius: 5px
+    border-radius: 5px;
+    width: 100%;
+}
+.root :global .workout-card:hover{
+    cursor: pointer;
 }
 
 .root :global .card-button:hover .MuiCardActionArea-focusHighlight {
@@ -19,4 +23,10 @@
 
 .root :global .MuiCardHeader-title{
     white-space: normal;
+}
+
+.root :global .title {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
 }
