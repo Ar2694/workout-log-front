@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths';
 import path from "path";
 
-
 const defaultConfig = {
   plugins: [react(), tsconfigPaths()],
   css: {
@@ -28,7 +27,7 @@ export default defineConfig(({ command, mode }) => {
       server: {
         proxy: {
           "/api": {
-            target:env.VITE_API_URL_DEV,
+            target: env.VITE_API_URL_DEV,
             changeOrigin: false,
             secure: false,
           }
@@ -40,9 +39,11 @@ export default defineConfig(({ command, mode }) => {
             target: env.VITE_API_URL,
             changeOrigin: true,
             secure: true
-    }}}
-  
-  }
+          }
+        }
+      }
+
+    }
   } else {
     return defaultConfig;
   }
